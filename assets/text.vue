@@ -1,5 +1,5 @@
 <template>
-    <FormGroup :label="label" :error="lastError">
+    <FormGroup :label="label" :error="errors.has(name) ? errors.first(name) : false">
         <input
             slot="input"
             type="text"
@@ -27,9 +27,6 @@
         ],
         data: () => ({
             value: this.initialValue
-        }),
-        computed: {
-            lastError: () => this.errors && this.errors.has(name) ? this.errors.first(name) : false
-        }
+        })
     };
 </script>

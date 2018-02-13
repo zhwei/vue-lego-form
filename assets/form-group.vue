@@ -1,7 +1,7 @@
 <template>
     <div :class="{
             'form-group': true,
-            'has-error': hasError
+            'has-error': error
         }"
     >
         <label class="control-label col-sm-2">{{ label }}</label>
@@ -10,7 +10,7 @@
 
             <slot name="input"></slot>
 
-            <span v-show="hasError" class="text-danger">
+            <span v-show="error" class="text-danger">
                 {{ error }}
             </span>
         </div>
@@ -23,9 +23,6 @@
             'name',
             'label',
             'error'
-        ],
-        computed: {
-            hasError: () => this.error !== null
-        }
+        ]
     };
 </script>
