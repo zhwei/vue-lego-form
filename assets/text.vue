@@ -9,11 +9,14 @@
         <input
             slot="input"
             type="text"
-            class="form-control"
-            v-validate="validator"
-            v-model="value"
             :name="name"
             :placeholder="placeholder"
+
+            class="form-control"
+
+            :data-vv-as="label"
+            v-validate="validator"
+            v-model="value"
         />
     </FormGroup>
 </template>
