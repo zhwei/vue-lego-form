@@ -15,6 +15,16 @@ export default {
         default: ''
     },
 
+    INPUT_DEFAULT_PROPS: {
+        name: this.PROP_NAME,
+        label: [String, Number],
+        initialValue: null,
+        placeholder: String,
+
+        // 内置 Validation
+        validator: this.PROP_VALIDATOR,
+    },
+
     hasRule: function (rules, target) {
         if (typeof rules === 'string') {
             return rules.indexOf(target) !== -1;

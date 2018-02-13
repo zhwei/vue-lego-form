@@ -7,7 +7,7 @@
         <label class="control-label col-sm-2">
             <span v-show="required" class="text-danger">*</span>
 
-            {{ label }}
+            {{ input.label }}
         </label>
 
         <div class="col-md-10">
@@ -26,10 +26,15 @@
 
     export default {
         props: {
-            name: utils.PROP_NAME,
-            required: utils.PROP_REQUIRED,
-            label: null,
-            error: null,
+            input: null,
+        },
+        computed: {
+            error: function () {
+                return this.input.errors.has(this.input.name) ? this.input.errors.first(this.input.name) : false;
+            },
+            required: function () {
+                return utils.hasRule(this.input.validator, 'required');
+            },
         }
     };
 </script>
