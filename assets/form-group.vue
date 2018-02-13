@@ -4,7 +4,11 @@
             'has-error': error
         }"
     >
-        <label class="control-label col-sm-2">{{ label }}</label>
+        <label class="control-label col-sm-2">
+            <span v-show="required" class="text-danger">*</span>
+
+            {{ label }}
+        </label>
 
         <div class="col-md-10">
 
@@ -18,11 +22,14 @@
 </template>
 
 <script>
+    import utils from './utils'
+
     export default {
-        props: [
-            'name',
-            'label',
-            'error'
-        ]
+        props: {
+            name: utils.PROP_NAME,
+            required: utils.PROP_REQUIRED,
+            label: null,
+            error: null,
+        }
     };
 </script>
