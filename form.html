@@ -8,17 +8,38 @@
     <!-- <script type="text/javascript" src="./static/vue.min.js"></script> -->
 </head>
 <body>
-    <div class="col-md-6" style='float: none; margin: 0 auto; padding-top: 20em;'>
-        <form class="form-horizontal" id='content'>
-            <h2>Text</h2>
+    <div class="col-md-6" style='float: none; margin: 0 auto; padding-top: 5em;'>
+        <form
+            class="form-horizontal"
+            id='content'
+            method="GET"
+            ref="form"
+            @submit.prevent="submit"
+        >
             <lego-text
                 name="email"
                 label="Email"
                 placeholder="a@a.com"
-                initial-value="a@b.com"
+                initial-value="a@bb.com"
                 validator="required|email"
-            />
-        </div>
+            ></lego-text>
+
+            <lego-date
+                name="date"
+                label="Date"
+                placeholder="Example Date"
+                initial-value="2018-02-22"
+                validator="required"
+            ></lego-date>
+
+            <lego-auto-complete
+                name="auto-complete"
+                label="Auto Complete"
+                validator="required"
+            ></lego-auto-complete>
+
+            <input type="submit" value="Submit" class="btn btn-primary">
+        </form>
     </div>
 
     <script src="./static/form.js"></script>

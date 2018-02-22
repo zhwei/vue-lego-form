@@ -3,12 +3,13 @@
         <input
             slot="input"
             type="text"
+            class="form-control"
+            autocomplete="email"
+
             :name="name"
             :placeholder="placeholder"
-
-            class="form-control"
-
             :data-vv-as="label"
+
             v-validate="validator"
             v-model="value"
         />
@@ -20,6 +21,9 @@
     import utils from './utils'
 
     export default {
+        inject: {
+            $validator: '$validator'
+        },
         components: {
             FormGroup
         },

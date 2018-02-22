@@ -1,7 +1,7 @@
 <template>
     <div :class="{
             'form-group': true,
-            'has-error': error
+            'has-error': error,
         }"
     >
         <label class="control-label col-sm-2">
