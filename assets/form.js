@@ -20,6 +20,9 @@ new Vue({
         LegoSelect,
         LegoAutoComplete,
     },
+    data: {
+        values: {},
+    },
     methods: {
         submit() {
             this.$validator.validateAll().then(result => {
@@ -33,5 +36,9 @@ new Vue({
                 return;
             })
         },
+
+        modify(name, value) {
+            this.values[name] = value;
+        }
     }
 })

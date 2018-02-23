@@ -38,7 +38,8 @@
     import _ from 'underscore'
     import axios from 'axios'
 
-    export default Field.extend({
+    export default {
+        extends: Field,
         components: {
             vSelect,
         },
@@ -84,5 +85,5 @@
                 350
             )
         },
-    });
+    };
 </script>

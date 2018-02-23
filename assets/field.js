@@ -53,6 +53,12 @@ export default Vue.extend({
 
     },
 
+    watch: {
+        value: function (newValue, oldValue) {
+            this.$emit('modify', this.name, newValue);
+        },
+    },
+
     methods: {
 
         hasRule: function (target) {

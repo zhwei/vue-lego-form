@@ -22,9 +22,10 @@
     import Field from './field'
     import Datepicker from 'vuejs-datepicker';
 
-    export default Field.extend({
+    export default {
+        extends: Field,
         components: {
             Datepicker,
         },
-    });
+    };
 </script>

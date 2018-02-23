@@ -22,6 +22,7 @@
                 placeholder="a@a.com"
                 initial-value="a@bb.com"
                 validator="required|email"
+                @modify="modify"
             ></lego-text>
 
             <lego-select
@@ -29,6 +30,7 @@
                 label="Select"
                 validator="required"
                 placeholder="select"
+                @modify="modify"
                 :options="[
                     {label: 'Foo', value: 'foo'},
                     {label: 'Bar', value: 'bar'},
@@ -42,12 +44,14 @@
                 placeholder="Example Date"
                 initial-value="2018-02-22"
                 validator="required"
+                @modify="modify"
             ></lego-date>
 
             <lego-auto-complete
                 name="auto-complete"
                 label="Auto Complete"
                 validator="required"
+                @modify="modify"
             ></lego-auto-complete>
 
             <input type="submit" value="Submit" class="btn btn-primary">

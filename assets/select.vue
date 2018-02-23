@@ -30,12 +30,13 @@
 <script>
     import Field from './field'
 
-    export default Field.extend({
+    export default {
+        extends: Field,
         props: {
             options: {
                 type: Array,
                 default: [],
             },
         },
-    });
+    };
 </script>

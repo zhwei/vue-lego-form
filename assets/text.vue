@@ -19,5 +19,7 @@
 <script>
     import Field from './field'
 
-    export default Field.extend({});
+    export default {
+        extends: Field
+    };
 </script>
