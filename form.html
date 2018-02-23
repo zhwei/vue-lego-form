@@ -24,6 +24,18 @@
                 validator="required|email"
             ></lego-text>
 
+            <lego-select
+                name="select"
+                label="Select"
+                validator="required"
+                placeholder="select"
+                :options="[
+                    {label: 'Foo', value: 'foo'},
+                    {label: 'Bar', value: 'bar'},
+                    {label: 'Exx', value: 'exx'},
+                ]"
+            ></lego-select>
+
             <lego-date
                 name="date"
                 label="Date"

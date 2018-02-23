@@ -11,7 +11,9 @@
                 v-model="selected"
                 v-validate="validator"
 
+
                 @search="onSearch"
+                @search:focus="onFocus"
             >
                 <template slot="option" slot-scope="option">
                     <span>{{ option.label }}</span>
@@ -66,6 +68,9 @@
             }
         },
         methods: {
+            onFocus() {
+            },
+
             onSearch(search, loading) {
                 loading(true);
                 this.search(loading, search, this);

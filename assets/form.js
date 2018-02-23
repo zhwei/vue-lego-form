@@ -6,6 +6,7 @@ import VeeValidateCN from 'vee-validate/dist/locale/zh_CN'
 
 import LegoText from './text.vue'
 import LegoDate from './date.vue'
+import LegoSelect from './select.vue'
 import LegoAutoComplete from './auto-complete.vue'
 
 Validator.localize('zh_CN', VeeValidateCN);
@@ -16,6 +17,7 @@ new Vue({
     components: {
         LegoText,
         LegoDate,
+        LegoSelect,
         LegoAutoComplete,
     },
     methods: {

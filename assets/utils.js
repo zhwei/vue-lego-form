@@ -18,7 +18,7 @@ export default {
     INPUT_DEFAULT_PROPS: {
         name: this.PROP_NAME,
         label: [String, Number],
-        initialValue: null,
+        initialValue: "",
         placeholder: String,
 
         // 内置 Validation
