@@ -19,23 +19,12 @@
 </template>
 
 <script>
-    import FormGroup from './form-group.vue'
-    import utils from './utils'
+    import Field from './field'
     import Datepicker from 'vuejs-datepicker';
 
-    export default {
-        inject: {
-            $validator: '$validator'
-        },
+    export default Field.extend({
         components: {
-            FormGroup,
             Datepicker,
         },
-        props: {
-            ...utils.INPUT_DEFAULT_PROPS
-        },
-        data: () => ({
-            value: this.initialValue
-        })
-    };
+    });
 </script>

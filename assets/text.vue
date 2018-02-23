@@ -17,19 +17,7 @@
 </template>
 
 <script>
-    import FormGroup from './form-group.vue'
-    import utils from './utils'
+    import Field from './field'
 
-    export default {
-        inject: {
-            $validator: '$validator'
-        },
-        components: {
-            FormGroup
-        },
-        props: utils.INPUT_DEFAULT_PROPS,
-        data: () => ({
-            value: this.initialValue
-        })
-    };
+    export default Field.extend({});
 </script>

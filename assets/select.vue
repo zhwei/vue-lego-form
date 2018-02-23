@@ -28,25 +28,14 @@
 </template>
 
 <script>
-    import FormGroup from './form-group.vue'
-    import utils from './utils'
+    import Field from './field'
 
-    export default {
-        inject: {
-            $validator: '$validator'
-        },
-        components: {
-            FormGroup
-        },
+    export default Field.extend({
         props: {
             options: {
                 type: Array,
                 default: [],
             },
-            ...utils.INPUT_DEFAULT_PROPS
         },
-        data: () => ({
-            value: ""
-        })
-    };
+    });
 </script>

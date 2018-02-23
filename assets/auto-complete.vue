@@ -33,30 +33,22 @@
 </template>
 
 <script>
-    import FormGroup from './form-group.vue'
-    import utils from './utils'
+    import Field from './field'
     import vSelect from 'vue-select'
     import _ from 'underscore'
     import axios from 'axios'
 
-    export default {
-        inject: {
-            $validator: '$validator'
-        },
+    export default Field.extend({
         components: {
-            FormGroup,
             vSelect,
         },
         props: {
-            ...utils.INPUT_DEFAULT_PROPS,
-
             remote: {
                 type: String,
                 default: "https://gist.githubusercontent.com/zhwei/e15caac74747da95347185225a12a991/raw/d0cbc2e7b5fe1eab3f7e393d820ffec3884ee364/gistfile1.txt"
             }
         },
         data: () => ({
-            value: this.initialValue,
             selected: null,
             options: [],
         }),
@@ -92,5 +84,5 @@
                 350
             )
         },
-    };
+    });
 </script>

@@ -5,7 +5,7 @@
         }"
     >
         <label class="control-label col-sm-2">
-            <span v-show="required" class="text-danger">*</span>
+            <span v-show="input.isRequired" class="text-danger">*</span>
 
             {{ input.label }}
         </label>
@@ -22,8 +22,6 @@
 </template>
 
 <script>
-    import utils from './utils'
-
     export default {
         props: {
             input: null,
@@ -31,9 +29,6 @@
         computed: {
             error: function () {
                 return this.input.errors.has(this.input.name) ? this.input.errors.first(this.input.name) : false;
-            },
-            required: function () {
-                return utils.hasRule(this.input.validator, 'required');
             },
         }
     };
